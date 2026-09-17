@@ -11,7 +11,7 @@ physical core와 그 SMT(Simultaneous Multi-Threading, 하이퍼스레딩) sibli
 | `GEMM_SMT/` | matrix-matrix multiplication (SGEMM). 6×16, 2×48 microkernel + cache blocking |
 | `GEMV_SMT/` | matrix-vector multiplication (SGEMV). unrolling factor(2/4/8/16)별 성능 비교 + SMT-split benchmark |
 
-## 핵심 아이디어
+## Method
 
 - **SMT core split**: main core와 sibling core가 matrix를 절반씩 맡아 동시에 연산
 - **lock-free synchronization**: mutex 없이 spin(`_mm_pause`) 기반 handshake로 thread 간 overhead 최소화
